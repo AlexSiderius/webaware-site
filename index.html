@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webaware – Websites & Online Marketing</title>
+<meta name="description" content="Jouw bedrijf online goed vindbaar. Webaware bouwt professionele websites en verzorgt SEO, Google Ads en hosting voor zzp en mkb in Amsterdam en omgeving.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --ink:#0d1330; --muted:#5a6280; --line:#e2e5f0;
+  --blue:#1f4fff; --blue-deep:#0b2ecf; --blue-soft:#e7edff; --yellow:#ffb800;
+  --radius:22px; --max:1200px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#080b1a; --surface:#10152b; --ink:#eef1ff; --muted:#98a0c0; --line:#20284a; --blue-soft:#18224d;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#080b1a; --surface:#10152b; --ink:#eef1ff; --muted:#98a0c0; --line:#20284a; --blue-soft:#18224d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.05;letter-spacing:-.025em}
+h2 em,h1 em{font-style:normal;color:var(--yellow)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer;font-size:16px}
+.btn:hover{transform:translateY(-2px)}
+.btn-yellow{background:var(--yellow);color:#111;box-shadow:0 10px 30px -10px rgba(255,184,0,.7)}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn-ghost{border-color:var(--line);background:var(--surface)}
+.btn-blue{background:var(--blue);color:#fff}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+header.scrolled .logo{color:var(--ink)}
+.logo b{font:700 22px "Space Grotesk",sans-serif;letter-spacing:-.02em;display:block;line-height:1}
+.logo small{font-size:11px;opacity:.75;letter-spacing:.02em}
+.nav ul{display:flex;gap:30px;list-style:none}
+.nav ul a{text-decoration:none;color:rgba(255,255,255,.85);font-weight:500;font-size:15px}
+header.scrolled .nav ul a{color:var(--muted)}
+.nav ul a:hover{color:var(--yellow)!important}
+.nav .btn{padding:10px 20px;font-size:15px}
+.menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);border-radius:12px;width:44px;height:44px;color:#fff;font-size:20px;cursor:pointer}
+header.scrolled .menu-toggle{color:var(--ink);border-color:var(--line)}
+@media (max-width:880px){
+  .nav ul{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 16px}
+  .nav ul.open{display:flex}
+  .nav ul li a{display:block;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink)!important}
+  .nav .btn{display:none}
+  .menu-toggle{display:block}
+}
+
+/* hero */
+.hero{position:relative;color:#fff;background:radial-gradient(1200px 600px at 85% 10%,#3d6bff 0%,transparent 60%),linear-gradient(135deg,var(--blue-deep),var(--blue) 60%,#2f6bff);overflow:hidden;padding:150px 0 0}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom,#000,transparent 85%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+.pill{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500}
+.pill .stars{color:var(--yellow);letter-spacing:2px}
+.hero h1{font-size:clamp(46px,7vw,92px);margin:24px 0 24px;text-transform:uppercase}
+.hero p{font-size:clamp(17px,1.7vw,20px);color:rgba(255,255,255,.85);max-width:52ch;margin-bottom:36px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;padding-bottom:96px}
+.portrait{position:relative;align-self:end;aspect-ratio:4/5;border-radius:28px 28px 0 0;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.2);border-bottom:0;display:grid;place-items:center;text-align:center;font-size:14px;color:rgba(255,255,255,.7);padding:24px}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:inherit}
+.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5);font-size:14px;line-height:1.3;z-index:2}
+.float b{font:700 24px "Space Grotesk",sans-serif;display:block}
+.float.f1{left:-40px;bottom:120px}
+.float.f2{right:-16px;top:60px}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .portrait{display:none}
+  .hero{padding-top:120px}
+  .hero .actions{padding-bottom:64px}
+}
+.usp{background:var(--surface);border-bottom:1px solid var(--line)}
+.usp ul{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:22px 0;font-weight:500;font-size:15px}
+.usp li{display:flex;align-items:center;gap:10px}
+.usp li::before{content:"";width:20px;height:20px;border-radius:50%;background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%23111' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100%}
+
+/* sections */
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:52px}
+.head h2{font-size:clamp(36px,4.8vw,60px);max-width:15ch;margin-top:14px;text-transform:uppercase}
+.head h2 em{color:var(--blue)}
+.head p{color:var(--muted);max-width:46ch}
+@media (max-width:600px){section{padding:80px 0}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s,box-shadow .25s}
+.card:hover{border-color:var(--blue);transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(31,79,255,.5)}
+.icon{width:54px;height:54px;border-radius:16px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center}
+.card h3{font-size:22px}
+.card p{color:var(--muted);font-size:15.5px}
+@media (max-width:1040px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.services{grid-template-columns:1fr}}
+.partners{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:44px}
+.partners span{display:flex;align-items:center;gap:8px;padding:12px 20px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-weight:600;font-size:14px;color:var(--muted)}
+.partners span b{color:var(--ink)}
+
+/* portfolio */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.folio{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.work{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;text-decoration:none;color:#fff;background:var(--g);isolation:isolate}
+.work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s}
+.work:hover img{transform:scale(1.05)}
+.work .mock{position:absolute;inset:18px 18px 90px;border-radius:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-size:13px;color:rgba(255,255,255,.7)}
+.work .meta{position:absolute;inset:auto 0 0;padding:22px;background:linear-gradient(transparent,rgba(5,8,25,.85));z-index:1}
+.work h3{font-size:20px}
+.work small{opacity:.75}
+.center{text-align:center;margin-top:40px}
+@media (max-width:1000px){.folio{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.folio{grid-template-columns:1fr}.work{aspect-ratio:4/3}}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.photo{position:relative;aspect-ratio:4/5;border-radius:28px;background:var(--blue-soft);display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:24px}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.photo::before{content:"";position:absolute;inset:24px -24px -24px 24px;border:3px solid var(--blue);border-radius:28px;z-index:-1}
+.about-text h2{font-size:clamp(36px,4.8vw,56px);text-transform:uppercase;margin:14px 0 24px}
+.about-text h2 em{color:var(--blue)}
+.about-text p{color:var(--muted);margin-bottom:16px}
+.sign{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:28px}
+.sign span{font:italic 500 22px Georgia,serif}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:48px}.photo{max-width:min(420px,calc(100% - 14px))}.photo::before{inset:14px -14px -14px 14px}}
+
+/* reviews */
+.rv-top{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 18px}
+.score b{font:700 32px "Space Grotesk",sans-serif}
+.stars{color:var(--yellow);letter-spacing:2px}
+.reviews{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 54px)/4);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.review{scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:12px}
+.review header{position:static;display:flex;align-items:center;gap:12px;border:0;background:none}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;background:var(--c)}
+.review h3{font:600 15px Inter,sans-serif;letter-spacing:0}
+.review small{color:var(--muted);font-size:13px}
+.review p{color:var(--muted);font-size:15px}
+@media (max-width:1000px){.reviews{grid-auto-columns:calc((100% - 18px)/2)}}
+@media (max-width:600px){.reviews{grid-auto-columns:85%}}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.faq h2{font-size:clamp(36px,4.8vw,56px);text-transform:uppercase;margin-top:14px}
+.faq h2 em{color:var(--blue)}
+.faq aside p{color:var(--muted);margin:20px 0 28px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;transition:border-color .2s}
+details[open]{border-color:var(--blue)}
+summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--blue);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 24px 22px;color:var(--muted)}
+@media (max-width:900px){.faq{grid-template-columns:1fr;gap:32px}}
+
+/* cta + footer */
+.cta{border-radius:32px;padding:72px 56px;color:#fff;background:radial-gradient(700px 400px at 90% 0%,#3d6bff,transparent 60%),linear-gradient(135deg,var(--blue-deep),var(--blue));display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.cta h2{font-size:clamp(36px,5vw,64px);text-transform:uppercase}
+.cta p{color:rgba(255,255,255,.85);margin:18px 0 0}
+form{display:grid;gap:12px}
+input,textarea{font:inherit;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:14px 16px;width:100%}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.65)}
+input:focus,textarea:focus{outline:2px solid var(--yellow);border-color:transparent}
+textarea{min-height:110px;resize:vertical}
+form .btn{justify-content:center;border:0}
+@media (max-width:900px){.cta{grid-template-columns:1fr;padding:48px 22px}}
+footer{background:#070b22;color:#b6bddb;margin-top:110px;padding:80px 0 32px;font-size:15px}
+.fgrid{display:grid;grid-template-columns:1.2fr 1.4fr 1fr;gap:48px}
+footer .logo{color:#fff;margin-bottom:20px}
+footer h4{color:#fff;font:600 14px Inter,sans-serif;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--yellow)}
+.legal{border-top:1px solid #1a2148;margin-top:56px;padding-top:24px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr}}
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.4);transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <nav class="wrap nav">
+    <a href="#" class="logo" aria-label="Webaware home">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="currentColor" stroke-width="2.5"/><path d="M8 12l4 11 5-9 5 9 4-11" stroke="var(--yellow)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span><b>WEBAWARE</b><small>Websites & Online Marketing</small></span>
+    </a>
+    <ul id="menu">
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#over">Over</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-yellow">Gratis offerte</a>
+    <button class="menu-toggle" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill"><span class="stars">★★★★★</span> 5/5 door 40+ klanten</span>
+        <h1>Jouw bedrijf online goed <em>vindbaar.</em></h1>
+        <p>Loop geen klanten meer mis door het ontbreken van een professionele en goed vindbare website! Ik heb altijd een passende en betaalbare oplossing om jouw bedrijf optimaal vindbaar te maken op het internet.</p>
+        <div class="actions">
+          <a href="#contact" class="btn btn-yellow">Vrijblijvende offerte →</a>
+          <a href="#portfolio" class="btn btn-line">Portfolio bekijken</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <!-- Vervang door eigen foto: <img src="alex.jpg" alt="Alex Siderius"> -->
+        Foto Alex Siderius
+        <div class="float f1"><b>100+</b>tevreden klanten</div>
+        <div class="float f2"><span class="stars">★★★★★</span><br>Google 5.0</div>
+      </div>
+    </div>
+  </section>
+  <div class="usp">
+    <ul class="wrap">
+      <li>100+ tevreden klanten</li>
+      <li>Altijd een passende oplossing</li>
+      <li>Persoonlijk contact</li>
+      <li>Volledige ontzorging</li>
+    </ul>
+  </div>
+
+  <section id="diensten">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Wat ik doe</span><h2>Mijn <em>diensten</em></h2></div>
+        <p>Van een nieuwe website tot hoger in Google en zorgeloze hosting. Alles onder één dak.</p>
+      </div>
+      <div class="services">
+        <article class="card reveal">
+          <div class="icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="22" height="16" rx="2.5"/><path d="M2 9h22M9 24h8"/></svg></div>
+          <h3>Professionele websites</h3>
+          <p>Vergroot de online zichtbaarheid van je bedrijf. Ik bouw websites, webshops en e-learning websites die je zelf eenvoudig kunt aanpassen, met korte instructievideo's als oplevering.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7.5"/><path d="M16.5 16.5L23 23"/></svg></div>
+          <h3>Zoekmachine­optimalisatie</h3>
+          <p>Meer klanten via je website? Ik onderzoek zoektermen met hoog zoekvolume en haalbare concurrentie, schrijf SEO-teksten en bouw waardevolle backlinks.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 19l6-6 4 4 9-9"/><path d="M15 8h7v7"/></svg></div>
+          <h3>Zoekmachine­adverteren</h3>
+          <p>Direct bovenaan in Google. Met advertenties sta je boven de zoekresultaten op de zoekwoorden die we kiezen. Je betaalt per klik: alleen voor mensen die al zoeken naar jouw dienst.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2l9 4v6c0 5.5-3.8 10-9 12-5.2-2-9-6.5-9-12V6z"/><path d="M9 13l3 3 5-6"/></svg></div>
+          <h3>Webhosting & onderhoud</h3>
+          <p>Ik neem de techniek uit handen, zodat jij kunt focussen op je core business. Hosting, updates, back-ups en beveiliging: je website blijft altijd veilig en bereikbaar.</p>
+        </article>
+      </div>
+      <div class="partners reveal">
+        <span><span class="stars">★★★★★</span> <b>5.0</b> Google-beoordeling</span>
+        <span><b>Google</b> Partner</span>
+        <span><b>Leadinfo</b> Certified Partner</span>
+        <span><b>NLGW</b> Lid</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Portfolio</span><h2>Een selectie uit mijn <em>werk</em></h2></div>
+        <a href="https://webaware.nl/portfolio/" class="btn btn-ghost">Volledig portfolio →</a>
+      </div>
+      <div class="folio">
+        <!-- Vervang .mock door <img src="screenshot.jpg" alt=""> -->
+        <a class="work reveal" href="https://webaware.nl/portfolio/" style="--g:linear-gradient(160deg,#1c2233,#0b0e18)"><div class="mock">screenshot</div><div class="meta"><h3>Car Service Amsterdam</h3><small>Website</small></div></a>
+        <a class="work reveal" href="https://webaware.nl/portfolio/" style="--g:linear-gradient(160deg,#f29b4b,#5a2e6b)"><div class="mock">screenshot</div><div class="meta"><h3>Tandem Thom Paragliding</h3><small>Website · Duitstalig</small></div></a>
+        <a class="work reveal" href="https://webaware.nl/portfolio/" style="--g:linear-gradient(160deg,#1f4fff,#0a1f7a)"><div class="mock">screenshot</div><div class="meta"><h3>Handbalvereniging Aristos Best</h3><small>Verenigingswebsite</small></div></a>
+        <a class="work reveal" href="https://webaware.nl/portfolio/" style="--g:linear-gradient(160deg,#d6283b,#3a0d18)"><div class="mock">screenshot</div><div class="meta"><h3>De Haarlemse Loodgieter</h3><small>Website + SEO</small></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="over">
+    <div class="wrap about">
+      <div class="photo reveal">
+        <!-- <img src="alex-portret.jpg" alt="Alex Siderius"> -->
+        Foto Alex Siderius
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">Over mij</span>
+        <h2>Een korte <em>kennismaking</em></h2>
+        <p>Ik ben Alex Siderius, de oprichter en eigenaar van Webaware Websites & Online Marketing. Mijn liefde voor websites begon op mijn veertiende en heeft me sindsdien nooit meer losgelaten. Na mijn studie Business IT & Management, die ik in 2016 succesvol heb afgerond, besloot ik mijn passie om te zetten in een eigen bedrijf.</p>
+        <p>Ik begrijp dat je als ondernemer vaak weinig tijd hebt om je te verdiepen in websites en online marketing. Daarom neem ik zoveel mogelijk werk voor je uit handen. Ik geloof sterk in samenwerking en betrek mijn klanten actief bij het proces.</p>
+        <p>Bij Webaware kun je rekenen op persoonlijke aandacht, transparantie en bovenal een oplossing die perfect aansluit bij jouw wensen. Laten we samen jouw online aanwezigheid naar een hoger niveau tillen!</p>
+        <div class="sign">
+          <span>Met vriendelijke groet, Alex Siderius</span>
+          <a href="#contact" class="btn btn-blue">Plan een kennismaking</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="alt">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Reviews</span><h2>Wat mijn klanten <em>vinden</em></h2></div>
+        <div class="rv-top">
+          <div class="score"><b>5.0</b><div><div class="stars">★★★★★</div><small style="color:var(--muted)">Google-reviews</small></div></div>
+          <a href="https://webaware.nl/reviews/" class="btn btn-ghost">Alle reviews →</a>
+        </div>
+      </div>
+      <!-- Teksten overgenomen uit screenshot; controleer tegen de originele Google-reviews -->
+      <div class="reviews">
+        <article class="review"><header><div class="av" style="--c:#1f4fff">D</div><div><h3>Dierpraktijk</h3><small>Google review</small></div></header><div class="stars">★★★★★</div><p>Alex van Webaware heeft mijn website naar een hoger niveau getild. De samenwerking verliep ontzettend prettig: snelle communicatie, duidelijke uitleg en altijd met sterke, doordachte suggesties.</p></article>
+        <article class="review"><header><div class="av" style="--c:#e8590c">C</div><div><h3>Celine Zorn</h3><small>Google review</small></div></header><div class="stars">★★★★★</div><p>Fijne en soepele samenwerking met Webaware gehad! Alex luistert echt naar je wensen en is zeer behulpzaam. Bedankt!</p></article>
+        <article class="review"><header><div class="av" style="--c:#2b8a3e">R</div><div><h3>Renate Lardenoij</h3><small>Google review</small></div></header><div class="stars">★★★★★</div><p>Super blij met Alex. Ontzettend flexibel, meedenkend en behulpzaam. Heel professioneel. Een aanrader!</p></article>
+        <article class="review"><header><div class="av" style="--c:#9c36b5">R</div><div><h3>Rita Muilwijk</h3><small>Google review</small></div></header><div class="stars">★★★★★</div><p>Alex van Webaware heeft me heel goed geholpen. Hij heeft mijn wensen goed vertaald naar een mooie website en is een fijne, betrouwbare partner.</p></article>
+        <article class="review"><header><div class="av" style="--c:#c2255c">M</div><div><h3>Marij Droomwerelden</h3><small>Google review</small></div></header><div class="stars">★★★★★</div><p>Webaware werkt snel, efficiënt en heel klantvriendelijk! Een aanrader voor iedereen die een nieuwe website zoekt of een bestaande wil aanpassen aan deze tijd.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap faq">
+      <aside>
+        <span class="eyebrow">FAQ</span>
+        <h2>Veelgestelde <em>vragen</em></h2>
+        <p>Staat je vraag er niet tussen? Bel of app gerust, ik denk graag mee.</p>
+        <a href="https://wa.me/31637418075" class="btn btn-blue">Stel je vraag via WhatsApp</a>
+      </aside>
+      <div>
+        <!-- Antwoorden zijn concept; vervang door de antwoorden van de huidige site -->
+        <details><summary>Wat kost een website laten maken?</summary><p>Een nieuwe website kan al vanaf €299. Voor kleine websites (tot 10 pagina's) werk ik met vaste prijzen. Een offerte is altijd gratis en vrijblijvend.</p></details>
+        <details><summary>Hoe snel kan mijn website opgeleverd worden?</summary><p>Dat hangt af van de omvang en hoe snel teksten en beeld aangeleverd worden. Bij de offerte krijg je een concrete planning.</p></details>
+        <details><summary>Wat moet ik aanleveren om een website te laten maken?</summary><p>Je logo, teksten en eventueel foto's. Heb je die nog niet? Dan help ik met teksten, stockfoto's en een logo.</p></details>
+        <details><summary>Is mijn website mobielvriendelijk?</summary><p>Ja. Elke website werkt goed op mobiel, tablet en desktop.</p></details>
+        <details><summary>Zijn er verborgen kosten?</summary><p>Nee. Je weet vooraf precies waar je aan toe bent. Hosting en onderhoud staan apart en transparant in de offerte.</p></details>
+        <details><summary>Wat voor websites bouw je?</summary><p>Bedrijfswebsites, webshops, e-learning websites en websites voor verenigingen, voor zzp'ers en mkb.</p></details>
+        <details><summary>Kan ik mijn toekomstige website zelf aanpassen?</summary><p>Ja. Je krijgt volledige controle en korte instructievideo's waarin ik uitleg hoe je zelf teksten en afbeeldingen aanpast.</p></details>
+        <details><summary>Kan je mijn website ook beter vindbaar maken?</summary><p>Zeker. Met zoekmachineoptimalisatie (SEO) en Google Ads zorg ik dat je beter gevonden wordt door potentiële klanten.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div>
+          <h2>Klaar om <em>gevonden</em> te worden?</h2>
+          <p>Vraag een gratis en vrijblijvende offerte aan. Je hoort snel van me.</p>
+        </div>
+        <form id="form">
+          <input name="naam" placeholder="Naam" required autocomplete="name" aria-label="Naam">
+          <input name="email" type="email" placeholder="E-mailadres" required autocomplete="email" aria-label="E-mailadres">
+          <textarea name="bericht" placeholder="Waar kan ik je mee helpen?" required aria-label="Bericht"></textarea>
+          <button class="btn btn-yellow" type="submit">Verstuur aanvraag →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#" class="logo">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="15" stroke="currentColor" stroke-width="2.5"/><path d="M8 12l4 11 5-9 5 9 4-11" stroke="#ffb800" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><b>WEBAWARE</b><small>Websites & Online Marketing</small></span>
+        </a>
+        <ul>
+          <li><a href="https://webaware.nl/partners/">Partners</a></li>
+          <li><a href="https://webaware.nl/algemene-voorwaarden/">Algemene voorwaarden</a></li>
+          <li><a href="https://webaware.nl/sitemap/">Sitemap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Snel naar</h4>
+        <p style="margin-bottom:16px">Een webdesignbureau in Amsterdam met kennis van online marketing. Ik bouw websites voor zzp'ers en het mkb. Ik werk o.a. voor organisaties uit Almere, Haarlem, Weesp, Leiden, Badhoevedorp, Amstelveen, Purmerend en kom graag bij u langs!</p>
+        <ul>
+          <li><a href="https://webaware.nl/locaties/">→ Alle locaties bekijken</a></li>
+          <li><a href="https://webaware.nl/wordpress-handleiding/">→ WordPress handleiding</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contactgegevens</h4>
+        <ul>
+          <li><a href="tel:+31637418075">Telefoon: 06-37418075</a></li>
+          <li><a href="mailto:info@webaware.nl">E-mail: info@webaware.nl</a></li>
+          <li><a href="https://wa.me/31637418075">WhatsApp sturen</a></li>
+          <li>Akerpolderstraat 45, 1066 ET Amsterdam</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="y"></span> Webaware Websites & Online Marketing Amsterdam</span>
+      <span>Websites voor zzp en kleine bedrijven</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/31637418075" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+</a>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+const header = document.getElementById('top');
+const onScroll = () => header.classList.toggle('scrolled', scrollY > 40);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+const toggle = document.querySelector('.menu-toggle'), menu = document.getElementById('menu');
+toggle.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+  header.classList.add('scrolled');
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Geen backend: opent mailprogramma met ingevulde aanvraag
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const d = new FormData(e.target);
+  const body = `Naam: ${d.get('naam')}\nE-mail: ${d.get('email')}\n\n${d.get('bericht')}`;
+  location.href = `mailto:info@webaware.nl?subject=${encodeURIComponent('Offerte-aanvraag via website')}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>
